@@ -1,0 +1,22 @@
+< video  id = " player "  controla a  reprodução automática > </ video >
+< button  id = " capture " > Capturar </ button >
+< canvas  id = " snapshot "  width = 320  height = 240 > </ canvas >
+< script >
+  var player =  documento . getElementById ( ' player ' );
+  var snapshotCanvas =  documento . getElementById ( ' instantâneo ' );
+  var captureButton =  documento . getElementById ( ' capture ' );
+  var videoTracks;
+  var  handleSuccess  =  function ( stream ) {
+    // Anexe o fluxo de vídeo ao elemento de vídeo e reproduza-o automaticamente.
+    jogador . srcObject  = fluxo;
+    videoTracks =  fluxo . getVideoTracks ();
+  };
+  captureButton . addEventListener ( ' clique ' , função () {
+    contexto de var =  instantâneo . getContext ( ' 2d ' );
+    contexto . drawImage (player, 0 , 0 , snapshotCanvas . width , snapshotCanvas . height );
+    // Pare todos os fluxos de vídeo.
+    videoTracks . forEach ( function ( track ) { track . stop ()});
+  });
+  navegador . mediaDevices . getUserMedia ({video :  true })
+      . then (handleSuccess);
+</ script >
