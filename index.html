@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Sistema Teste 1</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="icon" href="img/logo_tecnoset.png" sizes="32x32" type="image/png">
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"> <img src="img/logo_tecnoset.png" height="60px" ><a id="logo-container" href="#" class="brand-logo"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Acesso 1 </a></li>
+		<a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>Login</a>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Menu ADM</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Bem Vindo ao nosso Sistema!</h1>
+      <div class="row center">
+         
+		 <video  id = " player "  controla a  reprodução automática > </video>
+         <button  id = " capture " > Capturar </button>
+         <canvas  id = " snapshot "  width = 320  height = 240 > </canvas>
+        <script>
+          var player =  documento . getElementById ( ' player ' );
+          var snapshotCanvas =  documento . getElementById ( ' instantâneo ' );
+          var captureButton =  documento . getElementById ( ' capture ' );
+          var videoTracks;
+          var  handleSuccess  =  function ( stream ) {
+     <!-- Anexe o fluxo de vídeo ao elemento de vídeo e reproduza-o automaticamente.-->
+          jogador . srcObject  = fluxo;
+          videoTracks =  fluxo . getVideoTracks ();
+          };
+            captureButton . addEventListener ( ' clique ' , função () {
+            contexto de var =  instantâneo . getContext ( ' 2d ' );
+            contexto . drawImage (player, 0 , 0 , snapshotCanvas . width , snapshotCanvas . height );
+     <!-- Pare todos os fluxos de vídeo.-->
+            videoTracks . forEach ( function ( track ) { track . stop ()});
+          });
+           navegador . mediaDevices . getUserMedia ({video :  true })
+           . then (handleSuccess);
+       </script>
+      </div>
+      <div class="row center">
+        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Vamos lá!</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+
+  
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4"> greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+    
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
+
+
